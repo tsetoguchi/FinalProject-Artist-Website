@@ -6,20 +6,15 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django import forms
 from django.urls import reverse
-from .models import Comments
-import json, os, requests, webbrowser
+import json, os, requests
 
 # Comment Sections
-
 commentSectionflt = {
         }
-
 commentSectionwlg = {
         }
-
 commentSectionaway = {
         }
-
 commentSectionhome = {
         }
 
@@ -95,6 +90,7 @@ def index(request):
     # If GET request, return index
     return render(request, "konac/index.html", context)
 
+
 def index2(request):
 
         # If this is a POST request then process the Form data
@@ -165,16 +161,21 @@ def index2(request):
             }
             return render(request, "konac/index.html", context)
 
+
 def music(request):
 
     # if user is logged in, redirect to music2
     if ('loggedin' in request.session) and (request.session['loggedin'] is True):
         return render(request, "konac/music2.html")
 
+    # Else render music
     return render(request, "konac/music.html")
 
+
 def terms(request):
+
     return render(request, "konac/terms.html")
+
 
 def logout(request):
 
@@ -184,8 +185,31 @@ def logout(request):
         request.session['username'] = None
         return render(request, "konac/logout.html")
 
-    # else render index
-    return render(request, "konac/index.html")
+    # Else render index
+
+    # Submit a GET request to Youtube API
+    res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+
+    # Check if request was successful
+    if res.status_code != 200:
+        raise Exception('ERROR: API request unsuccessful.')
+
+    # Convert response to JSON
+    json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+
+    # Parse response to python dictionary
+    parsed = json.loads(f'{json_data}')
+
+    # Get title and youtube video ID of newest release
+    title = str(parsed['items'][0]['snippet']['title'])
+    id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+    videoURL = (f'https://www.youtube.com/embed/{id}')
+    context = {
+        'title': title,
+        'videoURL': videoURL
+    }
+    return render(request, "konac/index.html", context)
+
 
 def flutter(request):
 
@@ -243,10 +267,29 @@ def flutter(request):
 
     # If user is not logged in
     else:
+        # Submit a GET request to Youtube API
+        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+
+        # Check if request was successful
+        if res.status_code != 200:
+            raise Exception('ERROR: API request unsuccessful.')
+
+        # Convert response to JSON
+        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+
+        # Parse response to python dictionary
+        parsed = json.loads(f'{json_data}')
+
+        # Get title and youtube video ID of newest release
+        title = str(parsed['items'][0]['snippet']['title'])
+        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        videoURL = (f'https://www.youtube.com/embed/{id}')
         context = {
-                'comments': commentSectionflt
-            }
+            'title': title,
+            'videoURL': videoURL
+        }
         return render(request, "konac/index.html", context)
+
 
 def wontletgo(request):
 
@@ -304,10 +347,29 @@ def wontletgo(request):
 
     # If user is not logged in
     else:
+        # Submit a GET request to Youtube API
+        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+
+        # Check if request was successful
+        if res.status_code != 200:
+            raise Exception('ERROR: API request unsuccessful.')
+
+        # Convert response to JSON
+        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+
+        # Parse response to python dictionary
+        parsed = json.loads(f'{json_data}')
+
+        # Get title and youtube video ID of newest release
+        title = str(parsed['items'][0]['snippet']['title'])
+        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        videoURL = (f'https://www.youtube.com/embed/{id}')
         context = {
-                'comments': commentSectionwlg
-            }
+            'title': title,
+            'videoURL': videoURL
+        }
         return render(request, "konac/index.html", context)
+
 
 def away(request):
 
@@ -365,10 +427,29 @@ def away(request):
 
     # If user is not logged in
     else:
+        # Submit a GET request to Youtube API
+        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+
+        # Check if request was successful
+        if res.status_code != 200:
+            raise Exception('ERROR: API request unsuccessful.')
+
+        # Convert response to JSON
+        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+
+        # Parse response to python dictionary
+        parsed = json.loads(f'{json_data}')
+
+        # Get title and youtube video ID of newest release
+        title = str(parsed['items'][0]['snippet']['title'])
+        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        videoURL = (f'https://www.youtube.com/embed/{id}')
         context = {
-                'comments': commentSectionaway
-            }
+            'title': title,
+            'videoURL': videoURL
+        }
         return render(request, "konac/index.html", context)
+
 
 def home(request):
 
@@ -426,7 +507,25 @@ def home(request):
 
     # If user is not logged in
     else:
+        # Submit a GET request to Youtube API
+        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+
+        # Check if request was successful
+        if res.status_code != 200:
+            raise Exception('ERROR: API request unsuccessful.')
+
+        # Convert response to JSON
+        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+
+        # Parse response to python dictionary
+        parsed = json.loads(f'{json_data}')
+
+        # Get title and youtube video ID of newest release
+        title = str(parsed['items'][0]['snippet']['title'])
+        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        videoURL = (f'https://www.youtube.com/embed/{id}')
         context = {
-                'comments': commentSectionhome
-            }
+            'title': title,
+            'videoURL': videoURL
+        }
         return render(request, "konac/index.html", context)

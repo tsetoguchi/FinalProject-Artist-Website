@@ -24,7 +24,7 @@
   </head>
   <body>
 
-        <nav class="navbar navbar-light bg-light">
+        <nav id="navBar" class="navbar navbar-light bg-light">
 
           <a class="navbar-brand" id="konac" href="{% url 'index2' %}">
               <h1 class="konac">
@@ -58,7 +58,7 @@
           </form>
 
           <!-- Trigger the modal with a button -->
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#regModal">REGISTER</button>
+          <button type="button" id="regBtn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#regModal">REGISTER</button>
 
           <!-- Modal -->
           <div id="regModal" class="modal fade" role="dialog">

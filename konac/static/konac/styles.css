@@ -1,8 +1,88 @@
+/*iPhone X*/
+/*http://www.stephen.io/mediaqueries/#iPhone*/
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3)
+{
+    #indexBox
+    {
+        width: 0px !important;
+        height: 0px !important;
+    }
+    body
+    {
+        background-size: 100% 30%;
+    }
+    .youtubeVideo
+    {
+        position: relative;
+        top: 20% !important;
+    }
+    .music-caption
+    {
+        font-size: 1em !important;
+        padding-right: 80% !important;
+    }
+    .row
+    {
+        margin-top: 25% !important;
+    }
+    #logoutBtn, #regBtn, .indexHeader, #lowNav
+    {
+        display: none !important;
+    }
+    .navbar
+    {
+        padding: 0;
+    }
+}
+
+/*iPhone 6, 7, & 8 */
+/*http://www.stephen.io/mediaqueries/#iPhone*/
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+{
+    #indexBox
+    {
+        width: 0px !important;
+        height: 0px !important;
+    }
+    body
+    {
+        background-size: 100% 30%;
+    }
+    .youtubeVideo
+    {
+        position: relative;
+        top: 20% !important;
+    }
+    .music-caption
+    {
+        font-size: 1em !important;
+        padding-right: 80% !important;
+    }
+    .row
+    {
+        margin-top: 25% !important;
+    }
+    #logoutBtn, #regBtn, .indexHeader, #lowNav
+    {
+        display: none !important;
+    }
+    .navbar
+    {
+        padding: 0;
+    }
+}
+
+
 html, body
 {
     background-image: url( '/static/konac/images/bg.jpg' );
     background-repeat:no-repeat;
-    background-size: 100% auto;
+    background-size: 100% 100%;
     height: 100%
 }
 
@@ -24,7 +104,6 @@ img:hover
     -ms-transition:.5s;
     -moz-transition:.5s;
     -webkit-transition:.5s;
-    /* ...and now for the proper property */
     transition:.5s;
 }
 
@@ -66,7 +145,6 @@ a
     -ms-transition:.5s;
     -moz-transition:.5s;
     -webkit-transition:.5s;
-    /* ...and now for the proper property */
     transition:.5s;
 }
 
@@ -89,6 +167,10 @@ p
     font-family: "Arial","sans-serif";
 }
 
+.altHeader
+{
+    margin-top: 15%;
+}
 
 
 .btn-primary, .btn-info
@@ -118,7 +200,6 @@ p
     -ms-transition:.5s;
     -moz-transition:.5s;
     -webkit-transition:.5s;
-    /* ...and now for the proper property */
     transition:.5s;
 }
 
@@ -314,7 +395,7 @@ p
     font-weight:bold;
     margin:120px auto;
     height: 50%;
-    width: 50%
+    width: 50%;
 }
 
 #indexHeader
