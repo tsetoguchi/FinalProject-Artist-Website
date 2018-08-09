@@ -1,0 +1,238 @@
+html, body
+{
+    background-image: url( '/static/konac/images/bg.jpg' );
+    background-repeat:no-repeat;
+    background-size: 100% auto;
+    height: 100%
+}
+
+img
+{
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+img:hover
+{
+    opacity: 0.3;
+    color: white;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+    transition:.5s;
+}
+
+audio
+{
+
+    bottom: 20%;
+}
+
+a
+{
+    text-decoration: none !important;
+}
+
+.form-control
+{
+    width: 60%;
+}
+
+.modal-content
+{
+    margin-top: 50%;
+}
+
+.music-caption
+{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 2em;
+    color: black;
+    width: 300px;
+}
+
+.music-caption:hover
+{
+    color: white !important;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+    transition:.5s;
+}
+
+.container
+{
+    padding-top: 2%;
+}
+
+p
+{
+    width: 86%;
+}
+
+.errorMessage, .altHeader
+{
+    padding-top: 5%;
+    text-align: center;
+    font-family: "Arial","sans-serif";
+}
+
+.btn-primary, .btn-info
+{
+    color: black;
+    background-color: #f8f9fa !important;
+    border-color: #f8f9fa !important;
+    font-size: 1.25rem;
+}
+
+.konac
+{
+    letter-spacing: -1px;
+    padding-left: 5%;
+}
+
+.navbar-brand
+{
+    font-size: 2em;
+}
+
+.navbar-brand:hover
+{
+    color: #FFF1E8 !important;
+    font-size: 2em;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+    transition:.5s;
+}
+
+#music
+{
+    padding-top: 1%;
+}
+
+#konac:hover
+{
+    color: black !important;
+}
+
+#konac
+{
+    margin-right: 20em;
+}
+
+#lowNav
+{
+    bottom:0px !important;
+    background-color: black !important;
+    position: fixed;
+    width: 100%;
+    flex: 0 0 auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+#terms
+{
+    color: white;
+    font-size: 16px;
+}
+
+#termsBackground, .divBox
+{
+    background-color: white;
+    width: 50%;
+    width: 700x;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8%;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: 16px;
+    font-family: "Arial","sans-serif";
+}
+
+/*#login*/
+/*{*/
+/*    color: black;*/
+/*}*/
+
+.navbar-header{
+    width:200px;
+    margin-left:8.3333% !important;
+}
+
+.bottomText
+{
+    color: white;
+    font-size: 16px;
+}
+
+.bottomText, #terms:hover
+{
+    color: #FFF1E8;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    75% {
+        opacity: 0;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    100% {
+        opacity: 0;
+        height: 0px;
+        line-height: 0px;
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+#vol-control
+{
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#vol-control
+{
+    animation-name: fade-in;
+}
