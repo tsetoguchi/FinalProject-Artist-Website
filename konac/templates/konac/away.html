@@ -1,0 +1,36 @@
+{% extends "konac/layout2.html" %}
+{% load static %}
+
+
+{% block title %}
+Konac | Official Site
+{% endblock %}
+
+{% block body %}
+
+    <img value="away" class="flutter" id="flutterBig" src="{% static 'konac/images/away.jpg' %}" width="auto" height="auto" alt="Away"/>
+
+        <div class="pre-scrollable">
+            {% for key, value in comments.items %}
+                {% for comment in value %}
+                    <ul>{{ comment }}</ul>
+                {% endfor %}
+            {% endfor %}
+        </div>
+
+    <div class="commentDiv">
+        <div class="container center_div">
+            <form action="{% url 'away' %}" method="post">
+            {% csrf_token %}
+                <div class="form-group">
+                    <label class="commentHeader" for="comment">Comment:</label>
+                    <input type="text" class="form-control" name="comment">
+                </div>
+                <div class="col-sm-10">
+                    <input type="submit" value="Post" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

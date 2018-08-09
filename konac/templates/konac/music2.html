@@ -17,17 +17,17 @@ Konac | Official Site
         <div class="col-sm-4">
             <audio class="wontletgoAud" src="{% static 'konac/audio/wontletgo.mp3' %}" type="audio/mpeg"></audio>
             <img value="wontletgo" id="wontletgo" class="wontletgo" src="{% static 'konac/images/wontletgo.jpg' %}" width="300px" height="auto" alt="Won't Let Go"/>
-            <p class="music-caption">WON'T LET GO</p>
+            <a id="flutter-comments" href="{% url 'wontletgo' %}"><p class="music-caption">WON'T LET GO</p></a>
         </div>
         <div class="col-sm-4">
             <audio class="awayAud" src="{% static 'konac/audio/away.mp3' %}" type="audio/mpeg"></audio>
             <img value="away" id="away" class="flutter" src="{% static 'konac/images/away.jpg' %}" width="300px" height="auto" alt="Away"/>
-            <p class="music-caption">AWAY</p>
+            <a id="flutter-comments" href="{% url 'away' %}"><p class="music-caption">AWAY</p></a>
         </div>
         <div class="col-sm-4">
             <audio class="homeAud" src="{% static 'konac/audio/home.mp3' %}" type="audio/mpeg"></audio>
             <img value="home" id="home" src="{% static 'konac/images/home.jpg' %}" width="300px" height="auto" alt="Home"/>
-            <p class="music-caption">HOME</p>
+            <a id="flutter-comments" href="{% url 'home' %}"><p class="music-caption">HOME</p></a>
         </div>
     </div>
 </div>

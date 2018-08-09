@@ -7,6 +7,11 @@ Konac | Official Site
 
 {% block body %}
 
-
+    <div id="indexBox">
+        <h1 class="indexHeader">
+            {{ title }}
+        </h1>
+        <iframe class="youtubeVideo" width="560" height="315" src="{{ videoURL }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="middle"></iframe>
+    </div>
 
 {% endblock %}

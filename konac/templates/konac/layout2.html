@@ -53,11 +53,9 @@
           <!-- Logout modal -->
           <form action="{% url 'index' %}" method='post'>
             <a class="nav-link" href="{% url 'logout' %}">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">LOGOUT</button>
+            <button id="logoutBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">LOGOUT</button>
             </a>
           </form>
-
-          <!----------------------------------------------------------->
 
           <!-- Trigger the modal with a button -->
           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#regModal">REGISTER</button>
@@ -88,17 +86,12 @@
                 </form>
               </div>
           </div>
-
         </nav>
 
       {% block body %}
-
-
-
       {% endblock %}
 
       <nav id="lowNav" class="navbar navbar-light bg-light">
-
         <!-- Terms and Conditions -->
         <div class="bottomText">
           <a class="navbar-brand" href="{% url 'terms' %}">
@@ -106,8 +99,10 @@
                 Terms & Conditions
               </div>
           </a>
+              <div id="contact">
+                itskonac@gmail.com
+              </div>
         </div>
-
       </nav>
 
   </body>

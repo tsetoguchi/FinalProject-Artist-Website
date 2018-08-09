@@ -13,6 +13,7 @@ img
     left: 0;
     right: 0;
     bottom: 0;
+    max-width:100%
 }
 
 img:hover
@@ -72,6 +73,8 @@ a
 .container
 {
     padding-top: 2%;
+    padding-bottom: 10%;
+    width: 60%;
 }
 
 p
@@ -79,12 +82,14 @@ p
     width: 86%;
 }
 
-.errorMessage, .altHeader
+.errorMessage, .altHeader, .indexHeader
 {
     padding-top: 5%;
     text-align: center;
     font-family: "Arial","sans-serif";
 }
+
+
 
 .btn-primary, .btn-info
 {
@@ -144,17 +149,27 @@ p
     flex-basis: auto;
 }
 
-#terms
+#terms, #contact
 {
     color: white;
     font-size: 16px;
+}
+
+#contact
+{
+    float: right;
+    padding-top: 5px;
+}
+
+#terms
+{
+    float: left;
 }
 
 #termsBackground, .divBox
 {
     background-color: white;
     width: 50%;
-    width: 700x;
     height: 100%;
     top: 50%;
     left: 50%;
@@ -168,12 +183,13 @@ p
     font-family: "Arial","sans-serif";
 }
 
-/*#login*/
-/*{*/
-/*    color: black;*/
-/*}*/
+#logoutBtn
+{
+    padding-bottom: 15px;
+}
 
-.navbar-header{
+.navbar-header
+{
     width:200px;
     margin-left:8.3333% !important;
 }
@@ -225,7 +241,6 @@ p
     }
 }
 
-
 #vol-control
 {
     animation-duration: 2s;
@@ -254,6 +269,7 @@ p
 {
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 }
 
 .btn-primary
@@ -270,12 +286,49 @@ p
 .commentHeader
 {
     margin-right: 37%;
+    float: left;
 }
 
 .pre-scrollable
 {
     margin-left: auto;
-    width: 40%;
+    width: 50%;
     margin-right: auto;
     margin-top: auto;
+    background-color: white;
+}
+
+.commentDiv
+{
+    background-color: white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#indexBox
+{
+    background-color: #282828;
+    color:white;
+    z-index: -100;
+    font-weight:bold;
+    margin:120px auto;
+    height: 50%;
+    width: 50%
+}
+
+#indexHeader
+{
+   display:inline;
+   width:200px;
+   text-align:center;
+}
+
+.youtubeVideo
+{
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
