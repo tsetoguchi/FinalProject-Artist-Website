@@ -236,3 +236,46 @@ p
 {
     animation-name: fade-in;
 }
+
+#flutterBig
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#flutterBig:hover
+{
+    opacity: 1;
+}
+
+.form-control
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary
+{
+    float: right;
+}
+
+.form-group
+{
+    text-align: center;
+    font-size: 2em;
+}
+
+.commentHeader
+{
+    margin-right: 37%;
+}
+
+.pre-scrollable
+{
+    margin-left: auto;
+    width: 40%;
+    margin-right: auto;
+    margin-top: auto;
+}

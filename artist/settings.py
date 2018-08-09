@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '3gwl&5r$#x#x1dam&=l2i#(bgb#610
 
 SPOTIPY_CLIENT_ID='3fb5751c8aae4e1bb266dcf4a1f9b844'
 SPOTIPY_CLIENT_SECRET='2bd0cd9c4c4f415a8d6ae2aff244c44c'
-SPOTIPY_REDIRECT_URI='https://myworkspace-tao209.cs50.io:8080/'
+SPOTIPY_REDIRECT_URI='http://localhost:8080/callback'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True

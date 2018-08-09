@@ -1,4 +1,5 @@
 {% extends "konac/layout2.html" %}
+{% load static %}
 
 
 {% block title %}
@@ -7,18 +8,13 @@ Konac | Official Site
 
 {% block body %}
 
-<div class="list-group">
-  <a href="#" class="list-group-item">Flutter</a>
-  <a href="#" class="list-group-item">Won't Let Go</a>
-  <a href="#" class="list-group-item">Away</a>
-  <a href="#" class="list-group-item">Home</a>
-</div>
+    <img value="flutter" class="flutter" id="flutterBig" src="{% static 'konac/images/flutter.jpg' %}" width="500px" height="auto" alt="Flutter"/>
 
     <div class="divBox">
         <div class="container center_div">
             <form>
               <div class="form-group">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <label for="exampleFormControlTextarea1">Comment</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
               <div class="form-group row">

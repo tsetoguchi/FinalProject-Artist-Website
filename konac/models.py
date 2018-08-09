@@ -6,4 +6,4 @@ class Comments(models.Model):
     comment = models.CharField(max_length = 64)
 
     def __str__(self):
-        return f"{self.size} {self.type} {self.dish} Pizza - ${self.price}"
+        return f"{self.user}: {self.comment}"
